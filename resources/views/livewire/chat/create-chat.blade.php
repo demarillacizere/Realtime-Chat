@@ -1,8 +1,8 @@
 <div>
     {{-- Nothing in the world is as soft and yielding as water. --}}
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Users') }}
-        </h2>
-    </x-slot>
+@foreach ($users as $user)
+<ul class="list-group w-75 mx-auto mt-3 container-fluid ">
+    <li class="list-group-item list-group-item-action" wire:click='checkconversation({{$user->id}})'>{{$user->name}}</li>
+</ul>
+@endforeach
 </div>
