@@ -8,9 +8,11 @@
     </div>
     </div>
     <div class="chatlist_body">
+        @if (count($conversations)>0)
+        @foreach ($conversations as $conversation)
         <div class="chatlist_item">
             <div class="chatlist_img_container">
-                <img src="https://picsum.photos/id/100/200/300" alt="">
+                <img src="https://picsum.photos/id/{{conversation}}/200/300" alt="">
             </div>
             <div class="chatlist_info">
                 <div class="top_row">
@@ -28,5 +30,8 @@
                 </div>
             </div>
         </div>
+        @else
+        You have no conversations
+        @endif
     </div>
 </div>
