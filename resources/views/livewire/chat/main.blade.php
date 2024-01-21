@@ -5,7 +5,7 @@
         </div>
         <div class="chat_box_container">
             @livewire('chat.chatbox')
-            @livewire('chat.send-message')
+            
         </div>
     </div>
 </div>
