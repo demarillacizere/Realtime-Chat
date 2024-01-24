@@ -19,6 +19,7 @@ class ChatList extends Component
         $this->selectedConversation = $conversation;
         $receiverInstance= User::find($receiverId);
         $this->dispatch('loadConversation',$this->selectedConversation, $receiverInstance)->to('chat.chatbox'); 
+        $this->dispatch('updateSendMessage',$this->selectedConversation, $receiverInstance)->to('chat.send-message'); 
     }
     public function getChatUserInstance(Conversation $conversation, $request){
         $this->auth_id = auth()->id();

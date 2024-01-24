@@ -19,12 +19,13 @@ class Chatbox extends Component
     {
         $this->selectedConversation = $conversation;
         $this->receiverInstance = $receiver;
-    
+        
         $this->messagesCount = Message::where('conversation_id', $this->selectedConversation->id)->count();
         $this->messages = Message::where('conversation_id', $this->selectedConversation->id)
             ->skip($this->messagesCount - $this->paginateVar)
             ->take($this->paginateVar)
             ->get();
+            $this->dispatch("chatSelected");
     }
     public function render()
     {

@@ -5,7 +5,7 @@
                 <i class="bi bi-arrow-left"></i> 
             </div>
             <div class="img_container">
-                <img src="https://picsum.photos/id/{{$receiverInstance->id}}/234/200/300" alt="">
+                <img src="https://ui-avatars.com/api/?background=0D8ABC&color=fff&name={{$receiverInstance->name}}" alt="">
             </div>
             <div class="name">{{$receiverInstance->name}}</div>
             <div class="info">
