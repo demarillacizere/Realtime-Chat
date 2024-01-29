@@ -1,21 +1,3 @@
-<script>
-    $(document).ready(function () {
-         var chatboxBody = $(".chatbox_body");
- 
-     if (chatboxBody.length > 0) {
-         console.log('found')
-         chatboxBody.on('scroll', function() {
-             var top = chatboxBody.scrollTop();
-             if (top === 0) {
-                 window.livewire.emit('loadmore');
-             }
-         });
-     } else {
-         console.error(".chatbox_body not found on the page.");
-     }
- })
-     
- </script>
 <div class="">
     @if($selectedConversation)
         <div class="chatbox_header">
@@ -54,12 +36,22 @@
                 </div>
             @endforeach
         </div>
+        <script>
+            $(".chatbox_body").on('scroll', function(){
+                var top = chatboxBody.scrollTop();
+                if (top === 0) {
+                    window.livewire.emit('loadmore');
+                }
+         })
+             
+         </script>
+        
     @else
         <div class="fs-4 text-center text-primary mt-5">
             No conversation selected
         </div>
     @endif
-   
+
     
     
 </div>
