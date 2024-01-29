@@ -1,4 +1,22 @@
-<div>
+<script>
+    $(document).ready(function () {
+         var chatboxBody = $(".chatbox_body");
+ 
+     if (chatboxBody.length > 0) {
+         console.log('found')
+         chatboxBody.on('scroll', function() {
+             var top = chatboxBody.scrollTop();
+             if (top === 0) {
+                 window.livewire.emit('loadmore');
+             }
+         });
+     } else {
+         console.error(".chatbox_body not found on the page.");
+     }
+ })
+     
+ </script>
+<div class="">
     @if($selectedConversation)
         <div class="chatbox_header">
             <div class="return">
@@ -23,7 +41,7 @@
 
         <div class="chatbox_body">
             @foreach ($messages as $message)
-                <div class="msg_body {{auth()->id() == $message->sender_id? 'msg_body_me':'msg_body_receiver'}}">
+                <div wire:key='{{$message->id}}' class="msg_body {{auth()->id() == $message->sender_id? 'msg_body_me':'msg_body_receiver'}}">
                     {{$message->body}}
                     <div class="msg_body_footer">
                         <div class="date">
@@ -36,12 +54,14 @@
                 </div>
             @endforeach
         </div>
-        <div class="chatbox_footer">
-            <!-- Footer content here -->
-        </div>
     @else
         <div class="fs-4 text-center text-primary mt-5">
             No conversation selected
         </div>
     @endif
+   
+    
+    
 </div>
+
+
