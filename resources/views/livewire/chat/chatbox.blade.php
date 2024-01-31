@@ -23,7 +23,7 @@
 
         <div class="chatbox_body">
             @foreach ($messages as $message)
-                <div wire:key='{{$message->id}}' class="msg_body {{auth()->id() == $message->sender_id? 'msg_body_me':'msg_body_receiver'}}">
+                <div wire:key='{{$message->id}}' class="msg_body {{auth()->id() == $message->sender_id? 'msg_body_me':'msg_body_receiver'}}" style="width:80%;max-width:80%;max-width:max-content">
                     {{$message->body}}
                     <div class="msg_body_footer">
                         <div class="date">

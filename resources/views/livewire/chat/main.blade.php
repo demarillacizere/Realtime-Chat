@@ -22,9 +22,9 @@
             
             let height = $('.chatbox_body')[0].scrollHeight;
             window.livewire.emit('updateHeight');
-            height:height,
+            height:height
 
-        });
+        })
         
         $(window).resize(function(){
             if(window.innerWidth > 768){
