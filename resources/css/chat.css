@@ -370,3 +370,27 @@ body {
   color: #0484f3;
   width: 10%;
 }
+
+.welcome-text {
+  text-align: center;
+}
+
+.login-register-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px; /* Adjust as needed */
+}
+
+.login-register-buttons a {
+  margin: 0 10px; /* Adjust as needed */
+  padding: 10px 20px; /* Adjust as needed */
+  background-color: #4caf50; /* Change as needed */
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.login-register-buttons a:hover {
+  background-color: #45a049; /* Change as needed */
+}
